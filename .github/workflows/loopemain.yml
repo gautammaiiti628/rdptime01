@@ -1,0 +1,26 @@
+name: Windows - LiteManager RDP for Education
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Start Building...
+    runs-on: windows-latest
+    timeout-minutes: 9999
+    
+    steps:
+      - name: Downloading & Installing Essentials
+        run: |
+          Invoke-WebRequest -Uri "https://example.com/your-educational-Downloads.bat" -OutFile "Downloads.bat"
+          cmd /c Downloads.bat
+
+      - name: Setting Up LiteManager for Education
+        run: |
+          Invoke-WebRequest -Uri "https://example.com/your-educational-show.bat" -OutFile "show.bat"
+          cmd /c show.bat
+
+      - name: Time Counter (Optional Step)
+        run: |
+          Invoke-WebRequest -Uri "https://example.com/your-educational-loop.bat" -OutFile "loop.bat"
+          cmd /c loop.bat
